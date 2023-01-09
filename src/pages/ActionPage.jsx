@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Card from "../components/card/Card";
 
-const ActionPage = () => {
+const ActionPage = ({ favoriteArr }) => {
   return (
-    <div>ActionPage</div>
-  )
-}
+    <div>
+      {favoriteArr.map((item) => <Card item={item} color="#DD0000"/>)}
+    </div>
+  );
+};
 
-export default ActionPage
+export default ActionPage;
