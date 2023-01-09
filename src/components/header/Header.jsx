@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -39,6 +39,7 @@ const Header = () => {
           return (
             <div key={index}>
               <Link
+                
                 className="flex flex-col items-center"
                 to={`/categories${item.path}`}
               >
@@ -49,7 +50,9 @@ const Header = () => {
                 >
                   {item.image}
                 </div>
-                <div className="uppercase text-center mt-[10px]">{item.title}</div>
+                <div className="uppercase text-center mt-[10px]">
+                  {item.title}
+                </div>
               </Link>
             </div>
           );

@@ -32,13 +32,15 @@ const mockFooterData = [
 const Footer = () => {
   const [active, setActive] = useState(0);
 
-  
   return (
     <div className="p-[8px] flex sticky mt-auto bottom-[0] items-center justify-between bg-dark">
       {mockFooterData.map((item, index) => {
         return (
           <div key={index} onClick={() => setActive(index)}>
-            <Link className="flex flex-col items-center" to={`${item.path}`}>
+            <Link
+              className="flex flex-col items-center"
+              to={`${item.path}`}
+            >
               <div className="w-[50px] h-[50px] rounded-[50%] bg-dark p-[8px] ">
                 {item.image}
               </div>

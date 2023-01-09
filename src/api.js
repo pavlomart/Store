@@ -10,7 +10,22 @@ import SaleIcon from "./components/assets/svg/sale-icon";
 import SuitIcon from "./components/assets/svg/suit-icon";
 
 export const mockedCategories = [
-  { title: "women", image: <DressIcon />, path: "/women" },
+  {
+    title: "women",
+    image: <DressIcon />,
+    path: "/women",
+    subCetegories: [
+      "dresses",
+      "dresses",
+      "dresses",
+      "dresses",
+      "dresses",
+      "dresses",
+      "dresses",
+      "dresses",
+      "dresses",
+    ],
+  },
   { title: "men", image: <SuitIcon />, path: "/men" },
   { title: "children", image: <BabySuitIcon />, path: "/children" },
   { title: "health and care", image: <BabySuitIcon />, path: "/healthcare" },
