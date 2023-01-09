@@ -9,10 +9,16 @@ function App() {
       {mockedCategories.map((item, index) => (
         <Route
           key={index}
-          path={`/categories${item.path}`}
-          element={<CurrentPage item={item} />}
+          path={item.path}
+          element={<CurrentPage item={item}/>}
         />
       ))}
+      {mockedCategories.map((item, index) => (
+        item.subCetegories?.map(item => 
+          <Route path={item.path} 
+          element={<CurrentPage item={item}/>}/>)
+      ))}
+
       {mockFooterData.map((item, index) => {
         return (
           <>

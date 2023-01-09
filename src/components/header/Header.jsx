@@ -41,7 +41,7 @@ const Header = () => {
               <Link
                 
                 className="flex flex-col items-center"
-                to={`/categories${item.path}`}
+                to={item.path}
               >
                 <div
                   className={`w-[50px] h-[50px] rounded-[50%] ${

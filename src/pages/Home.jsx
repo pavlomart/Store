@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { mockedProducts } from "../api";
 import Card from "../components/card/Card";
 import Swiper from "../components/swiper/Swiper";
 
 const Home = () => {
+
   return (
     <div className="my-[20px]">
       <Swiper />

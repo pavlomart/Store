@@ -1,43 +1,64 @@
 import AddIcon from "./components/assets/svg/add-icon";
 import BabySuitIcon from "./components/assets/svg/baby-suit-icon";
-import BurgerIcon from "./components/assets/svg/burger-icon";
 import DressIcon from "./components/assets/svg/dress-icon";
 import HomeIcon from "./components/assets/svg/home-icon";
 import LikeIcon from "./components/assets/svg/like-icon";
 import MessageIcon from "./components/assets/svg/message-icon";
 import ProfileIcon from "./components/assets/svg/profile-icon";
-import SaleIcon from "./components/assets/svg/sale-icon";
 import SuitIcon from "./components/assets/svg/suit-icon";
 
 export const mockedCategories = [
   {
     title: "women",
     image: <DressIcon />,
-    path: "/women",
+    path: "/categories/women",
     subCetegories: [
-      "dresses",
-      "dresses",
-      "dresses",
-      "dresses",
-      "dresses",
-      "dresses",
-      "dresses",
-      "dresses",
-      "dresses",
+      { title: "Dresses", path: "/categories/women/dresses" },
+      { title: "Tops & Blouses", path: "/categories/women/tops&blouses" },
+      { title: "Jeans", path: "/categories/women/jeans" },
+      { title: "Sweaters", path: "/categories/women/sweaters" },
+      { title: "Jackets", path: "/categories/women/jackets" },
+      { title: "Vests", path: "/categories/women/vests" },
+      { title: "Coats", path: "/categories/women/coats" },
+      { title: "Socks", path: "/categories/women/socks" },
     ],
   },
-  { title: "men", image: <SuitIcon />, path: "/men" },
-  { title: "children", image: <BabySuitIcon />, path: "/children" },
-  { title: "health and care", image: <BabySuitIcon />, path: "/healthcare" },
-  { title: "furniture", image: <BabySuitIcon />, path: "/furniture" },
+  {
+    title: "men",
+    image: <SuitIcon />,
+    path: "/categories/men",
+    subCetegories: [
+      { title: "Shirt", path: "/categories/men/shirt" },
+      { title: "Sweatshirt", path: "/categories/men/sweatshirt" },
+      { title: "Pants", path: "/categories/men/pants" },
+      { title: "Shoes", path: "/categories/men/shoes" },
+      { title: "Coats", path: "/categories/men/coats" },
+      { title: "Shorts", path: "/categories/men/shorts" },
+      { title: "Socks", path: "/categories/men/socks" },
+    ],
+  },
+  {
+    title: "children", 
+    image: <BabySuitIcon />, 
+    path: "/categories/children", 
+    subCetegories: [
+      { title: "Clothing", path: "/categories/children/clothing" },
+      { title: "Shoes", path: "/categories/children/shoes" },
+      { title: "Watches", path: "/categories/children/watches" },
+      { title: "Accessories", path: "/categories/children/accessories" },
+      { title: "Jewelery", path: "/categories/children/jewelery" },
+    ],
+  },
+  { title: "health and care", image: <BabySuitIcon />, path: "/categories/healthcare" },
+  { title: "furniture", image: <BabySuitIcon />, path: "/categories/furniture" },
 ];
 
 export const mockFooterData = [
   { image: <HomeIcon />, title: "home", path: "/" },
   { image: <MessageIcon />, title: "direct", path: "/direct" },
   { image: <AddIcon />, title: "add", path: "/add" },
-  { image: <LikeIcon />, title: "fav", path: "/favorite" },
-  { image: <ProfileIcon />, title: "prof", path: "/profile" },
+  { image: <LikeIcon />, title: "favorite", path: "/favorite" },
+  { image: <ProfileIcon />, title: "profile", path: "/profile" },
 ];
 
 export const mockedProducts = [

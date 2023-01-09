@@ -1,41 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { mockedProducts } from "../api";
-import Card from "../components/card/Card";
+import ArrowIcon from "../components/assets/svg/arrow-icon";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
-import Catalogue from "./Catalogue";
+import ActionPage from "./ActionPage";
+import CategoryPage from "./CategoryPage";
 import Home from "./Home";
 
 const CurrentPage = ({ item }) => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col overflow-hidden min-h-screen">
+    <div className="flex flex-col mb-[20px] overflow-hidden min-h-screen">
       {item.path === "/" && <Header />}
-      {item.title === "home" ? (
-        <Home />
-      ) : (
-        <div>
-          <div className="flex flex-col bg-gray py-[10px] gap-[10px]">
-            <div className="px-[16px] py-[8px] text-center">{item.title}</div>
-            <div className="flex gap-[25px]">
-              {item.subCetegories &&
-                item.subCetegories.map((item) => {
-                  return (
-                    <div className="px-[4px] py-[4px] bg-gray border">
-                      {item}
-                    </div>
-                  );
-                })}
+      {item.title === "home" ? <Home /> :
+        <>
+          <div className=" px-[16px] relative bg-gray py-[8px]">
+            <div  onClick={() => navigate(-1)} className="w-[20px] absolute"><ArrowIcon /></div>
+            <div className="flex justify-center uppercase">
+              {item.title}
             </div>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-[25px] mt-[35px]">
-            {mockedProducts.map((item) => (
-              <Card item={item} color="#BDBCBC" />
-            ))}
-          </div>
-        </div>
-      )}
-      <Footer />
+          {item.path.includes("categories") ? <CategoryPage item={item} /> : <ActionPage  />}
+        </>
+      }
+      <div className="mt-[50px]">
+        <Footer />
+      </div>
     </div>
   );
 };

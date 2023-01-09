@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import LikeIcon from "../assets/svg/like-icon";
 
 const Card = ({item, color}) => {
+  const [isFavorite, setIsFavorite] = useState(false)
+
   return (
     <div className="w-[40%]">
               <>
@@ -16,8 +18,8 @@ const Card = ({item, color}) => {
                     <p className="font-[400] text-[12px]">{item.price}</p>
                     <p className="font-[400] text-[12px]">{item.size}</p>
                   </div>
-                  <div className="w-[20px]">
-                    <LikeIcon color={color}/>
+                  <div onClick={() => setIsFavorite(!isFavorite)} className="w-[20px]">
+                    <LikeIcon color={isFavorite ? "#D20000" : color}/>
                   </div>
                 </div>
               </>
